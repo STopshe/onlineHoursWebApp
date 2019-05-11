@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    
+  
+    <title>Firebase</title>
+  </head>
+  <body>
+
+    <!-- Flexbox container for aligning the toasts -->
+<div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center" style="min-height: 200px;">
+
+  <!-- Then put toasts within -->
+  <div role="alert" id="t1" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="true" data-delay="5000">
+    <div class="toast-header">
+      <strong class="mr-auto">Number Missing!</strong>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+      Sorry this number is not in the database.
+    </div>
+  </div>
+
+</div>
+
+      <div class="container">
+          <div class="jumbotron">
+              <h1 class="display-4">Online Hours</h1>
+              <div id="info">
+              
+              
+                </div> 
+              
+              <hr class="my-4">
+
+             
+              
+
+              <button type="button" id="backBTN" onclick="goBack()" id="theBTN" class="btn btn-primary">Go Back</button>
+
+              <div id="hide">
+              <form id="form">
+                <div class="form-group">
+
+                
+                    
+              <div class="input-group mb-3">
+                  
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Enter Number</span>
+                  </div>
+                  <!--To make input type tel work, button type submit should be used-->
+                  <input type="tel" id="phone" name="phone" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"  pattern="[0-9]{11}"
+                  required />
+                </div>
+
+                <button class="btn btn-primary" id="load" style="display:none;" type="button" disabled>
+                    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                    Loading...
+                  </button>
+
+                <button type="button" onclick="checkNum()" id="theBTN" class="btn btn-primary">Search</button>
+              
+                </div>
+              </form> 
+            </div>
+      
+
+  </div>
+
+
+  
+
+
+  </div>
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBb9UPYnZuS_x_LjPxjoOt-tUkAb7LGHiY",
+    authDomain: "fir-obhai.firebaseapp.com",
+    databaseURL: "https://fir-obhai.firebaseio.com",
+    projectId: "firebase-obhai",
+    storageBucket: "firebase-obhai.appspot.com",
+    messagingSenderId: "551478465757",
+    appId: "1:551478465757:web:ab95037786f1f54f"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="index.js"></script>
+     
+      
+    <noscript>Sorry, your browser does not support JavaScript!</noscript>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
